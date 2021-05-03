@@ -17,19 +17,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private ListView lvLista;
 //    private String[] names = {"Eduardo", "Felipe", "Edison"};
-    private ArrayList<Car> cars = new ArrayList<>();
+//    private ArrayList<Car> cars = new ArrayList<>();
+    private ArrayList<Car> cars;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Bundle bundle = getIntent().getExtras();
+        cars = bundle.getParcelableArrayList("cars");
+
         lvLista = findViewById(R.id.lvLista);
 //        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, names);
 //        Car car = new Car("Ford Mustang", "2500", "2021","140000000", null);
-        cars.add(new Car("Ford Mustang", "2500", "2021","140000000", null));
-        cars.add(new Car("Camaro", "2500", "2020","120000000", null));
-        cars.add(new Car("Shelby Cobra", "2500", "1966","70000000", null));
+//        cars.add(new Car("Ford Mustang", "2500", "2021","140000000", null));
+//        cars.add(new Car("Camaro", "2500", "2020","120000000", null));
+//        cars.add(new Car("Shelby Cobra", "2500", "1966","70000000", null));
 
         AdapterCar adapter = new AdapterCar(this, cars);
         lvLista.setAdapter(adapter);

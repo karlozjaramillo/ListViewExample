@@ -1,8 +1,10 @@
 package com.cj.listviewexample.models;
 
 import android.graphics.drawable.Drawable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Car {
+public class Car implements Parcelable {
     private String name;
     private String cylinderCapacity;
     private String model;
@@ -16,6 +18,26 @@ public class Car {
         this.value = value;
         this.image = image;
     }
+
+    protected Car(Parcel in) {
+        name = in.readString();
+        cylinderCapacity = in.readString();
+        model = in.readString();
+        value = in.readString();
+        image = in.readString();
+    }
+
+    public static final Creator<Car> CREATOR = new Creator<Car>() {
+        @Override
+        public Car createFromParcel(Parcel in) {
+            return new Car(in);
+        }
+
+        @Override
+        public Car[] newArray(int size) {
+            return new Car[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -55,5 +77,19 @@ public class Car {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(cylinderCapacity);
+        dest.writeString(model);
+        dest.writeString(value);
+        dest.writeString(image);
     }
 }

@@ -51,11 +51,14 @@ public class FormularioCarros extends AppCompatActivity implements View.OnClickL
                 agregarCarro();
                 break;
             case R.id.btnListar:
-//                Intent intent = new Intent(this, MainActivity.class);
-//                startActivity(intent);
-                AdapterCar adapter = new AdapterCar(this, cars);
+                Intent intent = new Intent(this, MainActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList("cars", cars);
+                intent.putExtras(bundle);
+                startActivity(intent);
+//                AdapterCar adapter = new AdapterCar(this, cars);
 //                adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, cars);
-                lvLista.setAdapter(adapter);
+//                lvLista.setAdapter(adapter);
                 break;
         }
     }
@@ -67,8 +70,17 @@ public class FormularioCarros extends AppCompatActivity implements View.OnClickL
         String valor = txtValor.getText().toString();
         String imagen = txtImagen.getText().toString();
 
-        Car car = new Car(nombre, cilindraje, modelo, valor, null);
+        Car car = new Car(nombre, cilindraje, modelo, valor, imagen);
         cars.add(car);
+        limpiarCampos();
+    }
+
+    private void limpiarCampos() {
+        txtNombre.getText().clear();
+        txtModelo.getText().clear();
+        txtCilindraje.getText().clear();
+        txtValor.getText().clear();
+        txtImagen.getText().clear();
     }
 }
 
