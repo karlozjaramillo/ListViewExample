@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cj.listviewexample.models.Car;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -24,10 +26,6 @@ public class AdapterCar extends BaseAdapter {
 
     public void addCar(ArrayList<Car> carsElement) {
         cars.addAll(carsElement);
-//        for (Car car : carsElement
-//        ) {
-//
-//        }
     }
 
     @Override
@@ -57,10 +55,18 @@ public class AdapterCar extends BaseAdapter {
         TextView valueCar = view.findViewById(R.id.carValue);
         TextView modelCar = view.findViewById(R.id.carModel);
         TextView ccCar = view.findViewById(R.id.carCylinderCapacity);
+        ImageView imageCar = view.findViewById(R.id.carImageView);
         nameCar.setText(carElement.getName());
-        valueCar.setText(carElement.getValue());
+        valueCar.setText("$" + carElement.getValue());
         modelCar.setText(carElement.getModel());
         ccCar.setText(carElement.getCylinderCapacity());
+
+        Picasso.get()
+                .load(carElement.getImage())
+                .resize(100, 100)
+                .centerCrop()
+                .error(R.mipmap.ic_launcher)
+                .into(imageCar);
 
         return view;
     }
