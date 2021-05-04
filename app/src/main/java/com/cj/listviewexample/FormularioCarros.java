@@ -1,14 +1,13 @@
 package com.cj.listviewexample;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.cj.listviewexample.models.Car;
 
@@ -24,7 +23,6 @@ public class FormularioCarros extends AppCompatActivity implements View.OnClickL
     private Button btnGuardar;
     private Button btnListar;
     private ListView lvLista;
-    //    private ArrayAdapter<String> adapter;
     private ArrayList<Car> cars = new ArrayList<>();
 
     @Override
@@ -56,9 +54,6 @@ public class FormularioCarros extends AppCompatActivity implements View.OnClickL
                 bundle.putParcelableArrayList("cars", cars);
                 intent.putExtras(bundle);
                 startActivity(intent);
-//                AdapterCar adapter = new AdapterCar(this, cars);
-//                adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, cars);
-//                lvLista.setAdapter(adapter);
                 break;
         }
     }
