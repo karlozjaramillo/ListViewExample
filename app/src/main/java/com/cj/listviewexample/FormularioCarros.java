@@ -22,7 +22,6 @@ public class FormularioCarros extends AppCompatActivity implements View.OnClickL
     private EditText txtImagen;
     private Button btnGuardar;
     private Button btnListar;
-    private ListView lvLista;
     private ArrayList<Car> cars = new ArrayList<>();
 
     @Override
@@ -37,7 +36,6 @@ public class FormularioCarros extends AppCompatActivity implements View.OnClickL
         txtImagen = findViewById(R.id.txtImagen);
         btnGuardar = findViewById(R.id.btnGuardar);
         btnListar = findViewById(R.id.btnListar);
-        lvLista = findViewById(R.id.lvLista);
         btnGuardar.setOnClickListener(this);
         btnListar.setOnClickListener(this);
     }

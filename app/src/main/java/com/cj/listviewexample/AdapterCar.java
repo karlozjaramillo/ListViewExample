@@ -58,12 +58,12 @@ public class AdapterCar extends BaseAdapter {
         ImageView imageCar = view.findViewById(R.id.carImageView);
         nameCar.setText(carElement.getName());
         valueCar.setText("$" + carElement.getValue());
-        modelCar.setText(carElement.getModel());
-        ccCar.setText(carElement.getCylinderCapacity());
+        modelCar.setText("Modelo: " + carElement.getModel());
+        ccCar.setText("Motor: " + carElement.getCylinderCapacity());
 
         Picasso.get()
                 .load(carElement.getImage())
-                .resize(100, 100)
+                .resize(300, 120)
                 .centerCrop()
                 .error(R.mipmap.ic_launcher)
                 .into(imageCar);
