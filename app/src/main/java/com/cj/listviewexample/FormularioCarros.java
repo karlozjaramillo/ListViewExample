@@ -38,6 +38,12 @@ public class FormularioCarros extends AppCompatActivity implements View.OnClickL
         btnListar = findViewById(R.id.btnListar);
         btnGuardar.setOnClickListener(this);
         btnListar.setOnClickListener(this);
+
+        //    LLenado de elementos a la lista
+        cars.add(new Car("Chevrolet Camaro", "6.2L", "2021", "185000000", "https://www.chevrolet.com.co/content/dam/chevrolet/south-america/colombia/espanol/index/cars/2018-camaro/04-images/plata-sable-camaro-six-ss-2018.jpg?imwidth=960"));
+        cars.add(new Car("Shelby Cobra", "4.2L", "1966", "75000000", "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/captura-de-pantalla-2019-12-30-a-las-12-01-29-1577703838.png"));
+        cars.add(new Car("Ford Mustang GT", "5.0L", "2004", "140000000", "https://hips.hearstapps.com/es.h-cdn.co/cades/contenidos/4825/ford-mustang-gt-r-concept-2.jpg"));
+        cars.add(new Car("Dodge Charger SRT", "6.2L", "2021", "140000000", "https://img.autocosmos.com/noticias/fotos/preview/NAZ_ff60239c7b684dc7b80f3d4313986456.jpg"));
     }
 
     @Override
