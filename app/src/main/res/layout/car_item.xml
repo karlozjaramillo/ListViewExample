@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#222020">
+    android:background="#E6222020">
 
     <ImageView
         android:id="@+id/carImageView"
-        android:layout_width="300dp"
+        android:layout_width="285dp"
         android:layout_height="120dp"
         android:layout_marginTop="30dp"
+        android:background="@drawable/white_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +72,7 @@
         android:text="KIA RIO"
         android:textColor="@color/white"
         android:textSize="24sp"
-        android:textStyle="bold"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
